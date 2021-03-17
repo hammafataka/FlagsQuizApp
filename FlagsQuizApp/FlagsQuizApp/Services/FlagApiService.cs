@@ -26,7 +26,7 @@ namespace FlagsQuizApp.Services
                 {
                     string json = await response.Content.ReadAsStringAsync();
                     CountryInfo info = JsonConvert.DeserializeObject<CountryInfo>(json);
-                    return info.GoeNames;
+                    return info.GeoNames;
                 }
 
             }

@@ -9,7 +9,7 @@ using FlagsQuizApp.Models;
 using Xamarin.Forms;
 
 using FlagsQuizApp.Services;
-
+using Xamarin.Essentials;
 
 namespace FlagsQuizApp.ViewModels
 {
@@ -42,11 +42,13 @@ namespace FlagsQuizApp.ViewModels
             set { answerResult = value; OnPropertyChange(); }
         }
 
-        private int score;
         public int Score
         {
-            get => score;
-            set { score = value; OnPropertyChange(); }
+            get => Preferences.Get("Score",0);
+            set 
+            { Preferences.Set("Score",value);
+                OnPropertyChange();
+            }
         }
 
         public ObservableCollection<Country> CountryOptions { get; }
@@ -81,7 +83,7 @@ namespace FlagsQuizApp.ViewModels
 
             if (numberOfCountries > 0)
             {
-                await Task.Delay(3000);
+                await Task.Delay(10000);
 
                 int rightAnswerIndex = randomGenerator.Next(0, numberOfOptions);
 
@@ -129,7 +131,7 @@ namespace FlagsQuizApp.ViewModels
                 if (CurrentCountry.GeoNameId == SelectedCountry.GeoNameId)
                 {
                     Score += points;
-                    AnswerResult = "Correct! =)";
+                    AnswerResult = "Correct! =) and capital is "+CurrentCountry.capital;
                 }
                 else
                 {

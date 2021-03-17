@@ -15,15 +15,15 @@ namespace FlagsQuizApp.Views
     public partial class CountryView : ContentPage
     {
         CountryViewModel vm;
-        Country Country;
+        
 
         public CountryView()
         {
             InitializeComponent();
             vm = new CountryViewModel();
             BindingContext = vm;
-            Country = new Country();
-            BindingContext = Country;
+           
+            
         }
         protected async override void OnAppearing()
         {

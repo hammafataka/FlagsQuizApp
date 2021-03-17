@@ -9,6 +9,7 @@ namespace FlagsQuizApp.Models
         public int GeoNameId { get; set; }
         public string CountryCode { get; set; }
         public string CountryName { get; set; }
+        public string capital { get; set; }
 
     }
 }

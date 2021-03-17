@@ -8,7 +8,7 @@ namespace FlagsQuizApp.Models
 {
     public class CountryInfo
     {
-        public List<Country> GoeNames { get; set; }
+        public List<Country> GeoNames { get; set; }
 
     }
 }

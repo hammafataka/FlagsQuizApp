@@ -28,5 +28,9 @@ namespace FlagsQuizApp
             await Task.Run(() => vm.LoadDataCommand.Execute(null));
         }
 
+        private void ResetBtn_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }
